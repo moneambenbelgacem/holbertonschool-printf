@@ -18,5 +18,6 @@ int _strlen(char *s);
 int print_string(va_list v);
 int print_int(va_list v);
 int print_char(va_list v);
+int print_unsigned(va_list v);
 
 #endif
