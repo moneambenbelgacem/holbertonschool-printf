@@ -3,7 +3,7 @@ int vprint(const char *format, va_list args)
 {
 	int i, len = 0;
 	int state = 0;
-	if(format)
+	if(format!=NULL)
 	{while (*format)
 	{
 		if (state == 0)
