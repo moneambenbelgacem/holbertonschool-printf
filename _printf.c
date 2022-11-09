@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 Here:
 	while (format[i] != '\0')
 	{
-		j = 3;
+		j = 4;
 		while (j >= 0)
 		{
 			if (methods[j].s[0] == format[i] && methods[j].s[1] == format[i + 1])
