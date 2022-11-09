@@ -55,7 +55,21 @@ int vprint(const char *format, va_list args)
 				break;
 				case 'd':
 				{
-					int n = va_arg(args, int);
+					long n = va_arg(args, int);
+					char buf[32];
+					number_to_string(n, 10, buf);
+					for (i = 0; buf[i]; i++)
+					{
+
+						putchar(buf[i]);
+						len++;
+					}
+
+					break;
+				}
+				case 'i':
+				{
+					long n = va_arg(args, int);
 					char buf[32];
 					number_to_string(n, 10, buf);
 					for (i = 0; buf[i]; i++)
