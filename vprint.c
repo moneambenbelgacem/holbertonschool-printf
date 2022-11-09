@@ -1,7 +1,7 @@
-#include"main.h"
+#include "main.h"
 int vprint(const char *format, va_list args)
 {
-int i , len = 0 ;
+	int i, len = 0;
 	int state = 0;
 	while (*format)
 	{
@@ -32,6 +32,8 @@ int i , len = 0 ;
 			case 's':
 			{
 				const char *s = va_arg(args, const char *);
+				if (s == NULL)
+					s = "(null)";
 				while (*s)
 				{
 					putchar(*s++);
@@ -44,7 +46,7 @@ int i , len = 0 ;
 				int n = va_arg(args, int);
 				char buf[32];
 				number_to_string(n, 10, buf);
-				for ( i = 0; buf[i]; i++)
+				for (i = 0; buf[i]; i++)
 				{
 
 					putchar(buf[i]);
