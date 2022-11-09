@@ -79,7 +79,7 @@ int print_char(va_list v)
 
 int print_unsigned(va_list v)
 {
-	int n = va_arg(v, int);
+	unsigned int n = va_arg(v, unsigned int);
 	int num, last = n % 10, digit, exp = 1, i = 1;
 
 	n /= 10;
