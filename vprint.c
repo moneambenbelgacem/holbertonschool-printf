@@ -3,71 +3,76 @@ int vprint(const char *format, va_list args)
 {
 	int i, len = 0;
 	int state = 0;
-	if(format!=NULL)
-	{while (*format)
+	if (format == NULL)
 	{
-		if (state == 0)
-		{
-			if (*format == '%')
-			{
-				state = 1;
-				
-			}
-			else
-			{
-				putchar(*format);
-				len++;
-			}
-		}
-		else if (state == 1)
-		{
-			switch (*format)
-			{
-			case 'c':
-			{
+		return (-1);
+	}
+	else
+	{
 
-				char ch = va_arg(args, int);
-				putchar(ch);
-				len++;
-				break;
-			}
-			case 's':
+		while (*format)
+		{
+			if (state == 0)
 			{
-				const char *s = va_arg(args, const char *);
-				if (s == NULL)
-					s = "(null)";
-				while (*s)
+				if (*format == '%')
 				{
-					putchar(*s++);
+					state = 1;
+				}
+				else
+				{
+					putchar(*format);
 					len++;
 				}
 			}
-			break;
-			case '%':
+			else if (state == 1)
 			{
-				putchar('%');
-				len++;
-			}
-			break;
-			case 'd':
-			{
-				int n = va_arg(args, int);
-				char buf[32];
-				number_to_string(n, 10, buf);
-				for (i = 0; buf[i]; i++)
+				switch (*format)
+				{
+				case 'c':
 				{
 
-					putchar(buf[i]);
+					char ch = va_arg(args, int);
+					putchar(ch);
+					len++;
+					break;
+				}
+				case 's':
+				{
+					const char *s = va_arg(args, const char *);
+					if (s == NULL)
+						s = "(null)";
+					while (*s)
+					{
+						putchar(*s++);
+						len++;
+					}
+				}
+				break;
+				case '%':
+				{
+					putchar('%');
 					len++;
 				}
-
 				break;
+				case 'd':
+				{
+					int n = va_arg(args, int);
+					char buf[32];
+					number_to_string(n, 10, buf);
+					for (i = 0; buf[i]; i++)
+					{
+
+						putchar(buf[i]);
+						len++;
+					}
+
+					break;
+				}
+				}
+				state = 0;
 			}
-			}
-			state = 0;
+			format++;
 		}
-		format++;
-	return (len);
-	}}
-	return(-1);
+		return (len);
+	}
 }
