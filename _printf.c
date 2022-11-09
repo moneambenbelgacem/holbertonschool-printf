@@ -6,7 +6,8 @@ int _printf(const char *format, ...)
 			{"%s", print_string},
 			{"%d", print_int},
 			{"%c", print_char},
-			{"%i", print_unsigned}};
+			{"%i", print_unsigned},
+			{"%p", print_pointer}};
 	va_list list;
 	int i = 0, j, len;
 
