@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- * main - Entry   point
+ * main - Entry   ppoint
  *
  * Return: 0 on success,  error code  gotherwise
  */
