@@ -10,6 +10,7 @@ int vprint(const char *format, va_list args)
 			if (*format == '%')
 			{
 				state = 1;
+				
 			}
 			else
 			{
@@ -48,7 +49,7 @@ int vprint(const char *format, va_list args)
 				
 					putchar(*format);
 					len++;
-					return(1);
+					return(len +1);
 				
 			}
 			break;
