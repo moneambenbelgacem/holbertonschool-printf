@@ -3,11 +3,8 @@ int vprint(const char *format, va_list args)
 {
 	int i, len = 0;
 	int state = 0;
-	if (format == NULL)
-	{
-		return (-1);
-	}
-	else
+
+	if (format)
 	{
 
 		while (*format)
@@ -16,6 +13,8 @@ int vprint(const char *format, va_list args)
 			{
 				if (*format == '%')
 				{
+					if (strlen(format) == 1)
+						return (-1);
 					state = 1;
 				}
 				else
@@ -75,4 +74,5 @@ int vprint(const char *format, va_list args)
 		}
 		return (len);
 	}
+	return (-1);
 }
