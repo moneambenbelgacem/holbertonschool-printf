@@ -11,12 +11,9 @@ int main(void)
 {
 	int len, len2;
 
-	len = _printf("Percent:[%%]\n");
-    len2 = printf("Percent:[%%]\n");
-    _printf("Len:[%d]\n", len);
-    printf("Len:[%d]\n", len2);
+	len = _printf(NULL);
+	len2 = printf(NULL);
 	fflush(stdout);
-	printf("%d,%d",len ,len2);
 	if (len != len2)
 	{
 		printf("Lengths differ.\n");

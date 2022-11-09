@@ -3,7 +3,8 @@ int vprint(const char *format, va_list args)
 {
 	int i, len = 0;
 	int state = 0;
-	while (*format)
+	if(format)
+	{while (*format)
 	{
 		if (state == 0)
 		{
@@ -66,6 +67,7 @@ int vprint(const char *format, va_list args)
 			state = 0;
 		}
 		format++;
-	}
 	return (len);
+	}}
+	return(-1);
 }
