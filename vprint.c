@@ -67,6 +67,12 @@ int vprint(const char *format, va_list args)
 
 					break;
 				}
+				default:
+				putchar('%');
+				len++;
+				putchar(*format);
+				len++;
+				break;
 				}
 				state = 0;
 			}
