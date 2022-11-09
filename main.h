@@ -9,7 +9,7 @@
 
 
 
-void vprint(const char *format, va_list args);
+int vprint(const char *format, va_list args);
 void unsnumtostr(int number, int base, char *buffer);
 void number_to_string(int number, int base, char *buffer);
 int _printf(const char *format, ...);

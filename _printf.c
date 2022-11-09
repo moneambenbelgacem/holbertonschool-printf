@@ -4,12 +4,13 @@
 
 int _printf(const char *format, ...)
 {
+	int res; 
 	va_list args;
 	va_start(args, format);
 
-	vprint(format, args);
+	res = vprint(format, args);
 
 	va_end(args);
-	return (0);
+	return (res);
 }
 
