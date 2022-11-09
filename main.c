@@ -11,8 +11,10 @@ int main(void)
 {
 	int len, len2;
 
-	len = _printf("Should print a single percent sign: %%\n");
-	len2 = printf("Should print a single percent sign: %%\n");
+	len = _printf("Percent:[%%]\n");
+    len2 = printf("Percent:[%%]\n");
+    _printf("Len:[%d]\n", len);
+    printf("Len:[%d]\n", len2);
 	fflush(stdout);
 	printf("%d,%d",len ,len2);
 	if (len != len2)

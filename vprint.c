@@ -44,13 +44,8 @@ int vprint(const char *format, va_list args)
 			break;
 			case '%':
 			{
-				
-				
-				
-					putchar(*format);
-					len++;
-					return(len +1);
-				
+				putchar('%');
+				len++;
 			}
 			break;
 			case 'd':
