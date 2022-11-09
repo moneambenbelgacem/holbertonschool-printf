@@ -19,5 +19,7 @@ int print_string(va_list v);
 int print_int(va_list v);
 int print_char(va_list v);
 int print_unsigned(va_list v);
+int print_pointer(va_list v);
+int print_hex_aux(unsigned int num);
 
 #endif

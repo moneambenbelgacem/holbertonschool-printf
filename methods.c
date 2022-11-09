@@ -113,3 +113,25 @@ int print_unsigned(va_list v)
 	putchar(last + '0');
 	return (i);
 }
+
+int print_pointer(va_list v)
+{
+	void *p;
+	char *s = "(nil)";
+	long int a;
+	int b, i;
+
+	p = va_arg(v, void *);
+	if (p = NULL)
+	{
+		for (i = 0; s[i] != '\0'; i++)
+			putchar(s[i]);
+
+		return (i);
+	}
+	a = (unsigned long int)p;
+	putchar('0');
+	putchar('x');
+	b = print_hex_aux(a);
+	return (b + 2);
+}
