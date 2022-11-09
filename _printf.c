@@ -5,7 +5,8 @@ int _printf(const char *format, ...)
 	format_t methods[] = {
 			{"%s", print_string},
 			{"%d", print_int},
-			{"%c", print_char}};
+			{"%c", print_char},
+			{"%i", print_unsigned}};
 	va_list list;
 	int i = 0, j, len;
 
