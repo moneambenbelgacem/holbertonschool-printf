@@ -1,17 +1,22 @@
-#ifndef INV_TREE_H
-#define INV_TREE_H
-#include <stdarg.h>
+#ifndef MAIN_H
+#define MAIN_H
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
-#include <string.h>
+#include <stdarg.h>
+#include <limits.h>
 #include <unistd.h>
 
+typedef struct format
+{
+	char *s;
+	int (*f)(va_list);
+} format_t;
 
-
-int vprint(const char *format, va_list args);
-void unsnumtostr(int number, int base, char *buffer);
-void number_to_string(int number, int base, char *buffer);
 int _printf(const char *format, ...);
+int _strlen(char *s);
+int print_string(va_list v);
+int print_int(va_list v);
+int print_char(va_list v);
 
 #endif

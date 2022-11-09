@@ -1,16 +1,36 @@
-#include"main.h"
-
-
+#include "main.h"
 
 int _printf(const char *format, ...)
 {
-	int res; 
-	va_list args;
-	va_start(args, format);
+	format_t methods[] = {
+			{"%s", print_string},
+			{"%d", print_int},
+			{"%c", print_char}};
+	va_list list;
+	int i = 0, j, len;
 
-	res = vprint(format, args);
+	va_start(list, format);
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+		return (-1);
 
-	va_end(args);
-	return (res);
+Here:
+	while (format[i] != '\0')
+	{
+		j = 2;
+		while (j >= 0)
+		{
+			if (methods[j].s[0] == format[i] && methods[j].s[1] == format[i + 1])
+			{
+				len += methods[j].f(list);
+				i += 2;
+				goto Here;
+			}
+			j--;
+		}
+		putchar(format[i]);
+		len++;
+		i++;
+	}
+	va_end(list);
+	return (len);
 }
-
