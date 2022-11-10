@@ -12,7 +12,7 @@ int main(void)
 {
 	int len, len2;
 
-	len = _printf("%c", 'j');
+	len = _printf("%i", 'j');
 	len2 = printf("%c", 'j');
 
 	fflush(stdout);
