@@ -26,11 +26,13 @@ int vprint(const char *format, va_list args)
 			else if (state == 1)
 			{
 				x =  switchi(format, args);
+				len+=x;
 				state = 0;
+
 			}
 			format++;
 		}
-		return (len + x);
+		return (len );
 	}
 	return (-1);
 }
