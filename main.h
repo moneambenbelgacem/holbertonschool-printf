@@ -13,5 +13,11 @@ int vprint(const char *format, va_list args);
 void unsnumtostr(int number, int base, char *buffer);
 void number_to_string(int number, int base, char *buffer);
 int _printf(const char *format, ...);
+int switchi(const char *format, va_list args);
+int sstr( va_list args);
+int pint( va_list args);
+int pinti(va_list args);
+
+
 
 #endif
