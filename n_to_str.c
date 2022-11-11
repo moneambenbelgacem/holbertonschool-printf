@@ -1,5 +1,5 @@
 #include "main.h"
-void number_to_string(int number, int base, char *buffer)
+void number_to_string(long int number, int base, char *buffer)
 {
 	if (number < 0)
 	{

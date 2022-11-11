@@ -1,7 +1,7 @@
 #include "main.h"
 int pinti(va_list args)
 {
-	int len, i;
+	int len = 0, i;
 	long int n = va_arg(args, int);
 
 	char buf[32];
@@ -12,5 +12,7 @@ int pinti(va_list args)
 		putchar(buf[i]);
 		len++;
 	}
+	
+	
 	return (len);
 }

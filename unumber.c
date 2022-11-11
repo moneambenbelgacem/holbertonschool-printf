@@ -1,5 +1,5 @@
 #include "main.h"
-void unsnumtostr(int number, int base, char *buffer)
+void unsnumtostr(long int number, int base, char *buffer)
 {
 	int i, cur = 0, digit;
 	char buf[65];

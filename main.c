@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 #include "main.h"
 
 /**
@@ -11,9 +12,8 @@ int main(void)
 {
 	int len, len2;
 
-	len = _printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n');
-	len2 = printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n');
-	printf("%d%d\n",len ,len2);
+	len = _printf("%i", INT_MIN);
+	len2 = printf("%i", INT_MIN);
 	fflush(stdout);
 	if (len != len2)
 	{
