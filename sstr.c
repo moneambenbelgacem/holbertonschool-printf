@@ -1,8 +1,13 @@
 #include "main.h"
-int sstr( va_list args)
+/**
+ * sstr - Entry point
+ *@args: argument entrer
+ * Return: 0 on success, error code otherwise
+ */
+int sstr(va_list args)
 {
 	const char *s = va_arg(args, const char *);
-	int len = 0 ;
+	int len = 0;
 
 	if (s == NULL)
 		s = "(null)";
@@ -11,5 +16,5 @@ int sstr( va_list args)
 		putchar(*s++);
 		len++;
 	}
-	return(len);
+	return (len);
 }

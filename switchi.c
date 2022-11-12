@@ -1,8 +1,13 @@
 #include "main.h"
+/**
+ * switchi - Entry point
+ *@format: format input
+ *@args: argument entrer
+ * Return: 0 on success, error code otherwise
+ */
 int switchi(const char *format, va_list args)
 {
 	int len = 0, s, d, ii;
-
 
 	switch (*format)
 	{

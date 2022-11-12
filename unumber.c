@@ -1,8 +1,16 @@
 #include "main.h"
+/**
+ * unsnumtostr - Entry point
+ *@number: argument entrer
+ *@base: argument entrer
+ *@buffer: argument entrer
+ * Return: 0 on success, error code otherwise
+ */
 void unsnumtostr(long int number, int base, char *buffer)
 {
 	int i, cur = 0, digit;
 	char buf[65];
+
 	if (number == 0)
 	{
 		*buffer++ = '0';
