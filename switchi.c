@@ -7,7 +7,7 @@
  */
 int switchi(const char *format, va_list args)
 {
-	int len = 0, s, d, ii;
+	int len = 0, s, d, ii, b;
 
 	switch (*format)
 	{
@@ -26,6 +26,10 @@ int switchi(const char *format, va_list args)
 	case 'd':
 		d = pint(args);
 		len += d;
+		break;
+	case 'b':
+		b = pintb(args);
+		len += b;
 		break;
 	case 'i':
 		ii = pinti(args);
